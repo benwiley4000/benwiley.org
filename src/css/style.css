@@ -1,3 +1,44 @@
+@keyframes marquee1 {
+  0% {
+    transform:translateX(100%);
+  }
+  100%{
+    transform:translateX(-100%);
+  }
+}
+@keyframes marquee2 {
+  0% {
+    transform:translateX(100%);
+  }
+  100%{
+    transform:translateX(-200%);
+  }
+}
+@keyframes marquee3 {
+  0% {
+    transform:translateX(100%);
+  }
+  100%{
+    transform:translateX(-300%);
+  }
+}
+@keyframes marquee4 {
+  0% {
+    transform:translateX(100%);
+  }
+  100%{
+    transform:translateX(-400%);
+  }
+}
+@keyframes marquee5 {
+  0% {
+    transform:translateX(100%);
+  }
+  100%{
+    transform:translateX(-500%);
+  }
+}
+
 html,
 body {
   margin: 0;
@@ -63,10 +104,37 @@ main {
   width: 0;
   will-change: width;
 }
-.audio_time_progress {
+.audio_progress_overlay {
   position: absolute;
-  right: 20px;
-  top: 15px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.audio_info_marquee {
+  overflow: hidden;
+  /* to make room for .time_progress */
+  width: calc(100% - 172px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+}
+.audio_info {
+  display: none;
+  width: 100%;
+  white-space: nowrap;
+  word-break: break-all;
+  margin: 0;
+  font-size: 1.2em;
+  color: #fff;
+}
+.audio_time_progress {
+  margin-right: 20px;
+  align-self: center;
   color: #fff;
   font-size: 1.4em;
 }
@@ -150,8 +218,36 @@ main {
   content: '\23e9';
 }
 
+@media screen and (min-width: 370px) {
+  .audio_info {
+    display: initial;
+    animation: marquee5 10s cubic-bezier(0, 0.23, 0.6, -0.09) infinite;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .audio_info {
+    animation: marquee4 10s cubic-bezier(0, 0.23, 0.7, -0.09) infinite;
+  }
+}
+
 @media screen and (min-width: 550px) {
   .title {
     font-size: 8em;
+  }
+  .audio_info {
+    animation: marquee3 10s cubic-bezier(0, 0.23, 0.85, -0.09) infinite;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .audio_info {
+    animatio:nc marquee2 10s cubic-bezier(0, 0.23, 1, -0.09) infinite;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .audio_info {
+    animation: initial;
   }
 }

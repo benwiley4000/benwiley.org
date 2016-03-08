@@ -9,13 +9,20 @@ app.AudioPlayerView = Backbone.View.extend({
     'click #skip_button': 'skipToNextTrack'
   },
 
-  audioFiles: [
-    'marty_mcpaper_theme.mp3',
-    'in_the_hall_of_the_mountain_king.mp3',
-    'secret_of_trash_island.mp3'
+  tracks: [
+    {
+      title: 'Marty McPaper\'s Epic Delivery Service',
+      file: 'marty_mcpaper_theme.mp3'
+    }, {
+      title: 'In the Hall of the Mountain King',
+      file: 'in_the_hall_of_the_mountain_king.mp3'
+    }, {
+      title: 'The Secret of Trash Island',
+      file: 'secret_of_trash_island.mp3'
+    }
   ],
 
-  currentAudioFileIndex: 0,
+  currentTrackIndex: 0,
 
   paused: true,
 
@@ -23,11 +30,16 @@ app.AudioPlayerView = Backbone.View.extend({
     this.$playPauseButton = this.$('#play_pause_button');
     this.$progressBar = this.$('#audio_progress');
     this.$timeProgress = this.$('#audio_time_progress');
+    this.$progressOverlay = this.$('#audio_progress_overlay');
+    this.$infoBox = this.$('#audio_info');
 
     var audio = this.audio = $('<audio preload="metadata"><source/></audio>').get(0);
     audio.addEventListener('ended', this.skipToNextTrack.bind(this));
-    audio.addEventListener('timeupdate', this.updateProgressBar.bind(this));
-    audio.addEventListener('loadedmetadata', this.updateTimeProgress.bind(this));
+    audio.addEventListener('timeupdate', this.renderProgressBar.bind(this));
+    audio.addEventListener('loadedmetadata', function () {
+      this.renderTrackTitle();
+      this.renderTimeProgress();
+    }.bind(this));
     this.updateSource();
   },
 
@@ -39,9 +51,9 @@ app.AudioPlayerView = Backbone.View.extend({
 
   skipToNextTrack: function () {
     this.audio.pause();
-    var i = ++this.currentAudioFileIndex;
-    if (i >= this.audioFiles.length) {
-      this.currentAudioFileIndex = 0;
+    var i = ++this.currentTrackIndex;
+    if (i >= this.tracks.length) {
+      this.currentTrackIndex = 0;
     }
     this.updateSource();
     this.togglePause(false);
@@ -51,21 +63,31 @@ app.AudioPlayerView = Backbone.View.extend({
     this.audio.src = this.getCurrentAudioFilePath();
   },
 
-  getCurrentAudioFilePath: function () {
-    return './audio/' + this.audioFiles[this.currentAudioFileIndex];
+  getCurrentTrackTitle: function () {
+    return this.tracks[this.currentTrackIndex].title;
   },
 
-  updateProgressBar: function () {
+  getCurrentAudioFilePath: function () {
+    return './audio/' + this.tracks[this.currentTrackIndex].file;
+  },
+
+  renderProgressBar: function () {
     var currentTime = this.audio.currentTime;
     var duration = this.audio.duration;
     this.$progressBar.width((100 * currentTime / duration) + '%');
-    this.updateTimeProgress();
+    this.renderTimeProgress();
   },
 
-  updateTimeProgress: function () {
+  renderTimeProgress: function () {
     var currentTime = this.audio.currentTime;
     var duration = this.audio.duration;
     this.$timeProgress.text(currentTime.toTime() + ' / ' + duration.toTime());
+  },
+
+  renderTrackTitle: function () {
+    var title = this.getCurrentTrackTitle();
+    this.$progressOverlay.attr('title', title);
+    this.$infoBox.text(title);
   }
 
 });
