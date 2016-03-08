@@ -6,7 +6,7 @@ app.AppView = Backbone.View.extend({
   el: '#content',
 
   initialize: function () {
-    // initialize audio player
+    this.$audioPlayerView = new app.AudioPlayerView();
   },
 
   /*

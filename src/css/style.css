@@ -37,7 +37,7 @@ main {
 .contact_link:hover {
   text-decoration: underline;
 }
-.audio_player_footer {
+.audio_player {
   display: flex;
   flex-direction: row;
   height: 50px;
