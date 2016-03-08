@@ -6,8 +6,18 @@ app.AppView = Backbone.View.extend({
   el: '#content',
 
   initialize: function () {
-    this.$audioPlayerView = new app.AudioPlayerView();
+    this.audioPlayerView = new app.AudioPlayerView();
+
+    $(document).keydown(this.toggleAudioPause.bind(this));
   },
+
+  toggleAudioPause: function (e) {
+    if (e.which !== SPACE_BAR) {
+      return;
+    }
+    e.preventDefault();
+    this.audioPlayerView.togglePause();
+  }
 
   /*
   swapView: function () {
