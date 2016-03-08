@@ -9,7 +9,8 @@ var minifyCSS = require('gulp-minify-css');
 
 gulp.task('copy', [
   'copy:html',
-  'copy:libs'
+  'copy:libs',
+  'copy:audio'
 ]);
 
 gulp.task('copy:html', function () {
@@ -27,6 +28,12 @@ gulp.task('copy:libs', function () {
     .pipe(plumber())
     .pipe(concat('libs.js'))
     .pipe(gulp.dest('dist/'), { cwd: '../../../' });
+});
+
+gulp.task('copy:audio', function () {
+  return gulp.src('src/audio/*')
+    .pipe(plumber())
+    .pipe(gulp.dest('dist/audio/'));
 });
 
 gulp.task('buildjs', function () {

@@ -16,7 +16,7 @@ main {
 }
 .top_stripe {
   height: 10px;
-  background-color: cornflowerblue;;
+  background-color: cornflowerblue;
 }
 .title {
   align-self: center;
@@ -45,6 +45,10 @@ main {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+.audio_controls {
+  display: flex;
+  flex-direction: row;
 }
 
 /* http://codepen.io/aralon/pen/NqGWXZ */
@@ -106,6 +110,7 @@ main {
 .paused .triangle_2 {
   transform: translate(0, 50%);
 }
+
 .skip_button {
   color: #fff;
   font-size: 3em;
