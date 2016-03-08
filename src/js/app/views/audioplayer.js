@@ -78,8 +78,8 @@ app.AudioPlayerView = Backbone.View.extend({
   },
 
   renderTimeProgress: function () {
-    var currentTime = this.audio.currentTime;
-    var duration = this.audio.duration;
+    var currentTime = this.audio.currentTime || 0;
+    var duration = this.audio.duration || 0;
     this.$timeProgress.text(currentTime.toTime() + ' / ' + duration.toTime());
   },
 
