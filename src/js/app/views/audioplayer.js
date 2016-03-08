@@ -30,7 +30,6 @@ app.AudioPlayerView = Backbone.View.extend({
     this.$playPauseButton = this.$('#play_pause_button');
     this.$progressBar = this.$('#audio_progress');
     this.$timeProgress = this.$('#audio_time_progress');
-    this.$progressOverlay = this.$('#audio_progress_overlay');
     this.$infoBox = this.$('#audio_info');
 
     var audio = this.audio = $('<audio preload="metadata"><source/></audio>').get(0);
@@ -86,7 +85,7 @@ app.AudioPlayerView = Backbone.View.extend({
 
   renderTrackTitle: function () {
     var title = this.getCurrentTrackTitle();
-    this.$progressOverlay.attr('title', title);
+    this.$el.attr('title', title);
     this.$infoBox.text(title);
   }
 
