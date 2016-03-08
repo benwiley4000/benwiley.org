@@ -84,7 +84,7 @@ app.AudioPlayerView = Backbone.View.extend({
   },
 
   renderTrackTitle: function () {
-    var title = this.getCurrentTrackTitle();
+    var title = 'Ben Wiley - ' + this.getCurrentTrackTitle();
     this.$el.attr('title', title);
     this.$infoBox.text(title);
   }
