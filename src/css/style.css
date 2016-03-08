@@ -1,0 +1,124 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff9f2;
+}
+header,
+main {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Josefin Sans', serif;
+}
+.top_stripe {
+  height: 10px;
+  background-color: cornflowerblue;;
+}
+.title {
+  align-self: center;
+  font-size: 4em;
+  color: #333;
+}
+.main {
+  font-size: 1.6em;
+  align-items: center;
+}
+.contact_link {
+  padding-bottom: 30px;
+}
+.contact_link a {
+  text-decoration: none;
+  color: #333;
+}
+.contact_link:hover {
+  text-decoration: underline;
+}
+.audio_player_footer {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* http://codepen.io/aralon/pen/NqGWXZ */
+.audio_button {
+  margin-left: 25px;
+  margin-right: 5px;
+  cursor: pointer;
+  align-self: center;
+}
+.play_pause_button {
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  position: relative;
+}
+.left {
+  height: 100%;
+  float: left;
+  background-color: #fff;
+  width: 36%;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+.triangle_1 {
+  transform: translate(0, -100%);
+}
+.triangle_2 {
+  transform: translate(0, 100%);
+}
+.triangle_1,
+.triangle_2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  border-right: 30px solid #333;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  transition: transform 0.25s ease;
+}
+.right {
+  height: 100%;
+  float: right;
+  width: 36%;
+  background-color: #fff;
+  transition: all 0.25s ease;
+}
+.paused .left {
+  width: 50%;
+}
+.paused .right {
+  width: 50%;
+}
+.paused .triangle_1 {
+  transform: translate(0, -50%);
+}
+.paused .triangle_2 {
+  transform: translate(0, 50%);
+}
+.skip_button {
+  color: #fff;
+  font-size: 3em;
+  line-height: 30px;
+  overflow: hidden;
+}
+.skip_button::after {
+  /* ( '⏩'' ) */
+  content: '\23e9';
+}
+
+@media screen and (min-width: 550px) {
+  .title {
+    font-size: 8em;
+  }
+}
