@@ -22,13 +22,13 @@ app.AudioPlayerView = Backbone.View.extend({
   initialize: function () {
     this.$playPauseButton = this.$('#play_pause_button');
     this.$progressBar = this.$('#audio_progress');
+    this.$timeProgress = this.$('#audio_time_progress');
 
-    var audio = this.audio = $('<audio><source/></audio>').get(0);
+    var audio = this.audio = $('<audio preload="metadata"><source/></audio>').get(0);
     audio.addEventListener('ended', this.skipToNextTrack.bind(this));
     audio.addEventListener('timeupdate', this.updateProgressBar.bind(this));
+    audio.addEventListener('loadedmetadata', this.updateTimeProgress.bind(this));
     this.updateSource();
-
-    this.on('togglepause', this, 'togglePause');
   },
 
   togglePause: function (value) {
@@ -59,6 +59,13 @@ app.AudioPlayerView = Backbone.View.extend({
     var currentTime = this.audio.currentTime;
     var duration = this.audio.duration;
     this.$progressBar.width((100 * currentTime / duration) + '%');
+    this.updateTimeProgress();
+  },
+
+  updateTimeProgress: function () {
+    var currentTime = this.audio.currentTime;
+    var duration = this.audio.duration;
+    this.$timeProgress.text(currentTime.toTime() + ' / ' + duration.toTime());
   }
 
 });

@@ -7,6 +7,9 @@ app.AppView = Backbone.View.extend({
 
   initialize: function () {
     this.audioPlayerView = new app.AudioPlayerView();
+    setTimeout(function() {
+      this.audioPlayerView.togglePause(false);
+    }.bind(this), 500);
 
     $(document).keydown(this.toggleAudioPause.bind(this));
   },
