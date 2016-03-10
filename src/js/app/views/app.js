@@ -7,8 +7,10 @@ app.AppView = Backbone.View.extend({
   el: '#content',
 
   initialize: function () {
+    this.$contact = this.$('#contact');
     this.$webProjects = this.$('#web_projects');
     this.$games = this.$('#games');
+    this.$writing = this.$('#writing');
 
     this.audioPlayerView = new app.AudioPlayerView();
     setTimeout(function() {
@@ -16,6 +18,8 @@ app.AppView = Backbone.View.extend({
     }.bind(this), 500);
 
     $(document).keydown(this.toggleAudioPause.bind(this));
+
+    this.on('pageswap', this.swapView);
 
     this.render();
   },
@@ -53,49 +57,38 @@ app.AppView = Backbone.View.extend({
     data.games.games.forEach(function (game) {
       $games.append(projectTemplate(game));
     });
-  }
+  },
 
-  /*
   swapView: function () {
     this.updateNavBar();
-    if (app.page === 'your-foods') {
-      this.openTrackersView();
-    } else if (app.page === 'timeline') {
-      this.openTimelineView();
+
+    var $divToOpen = null;
+    if (app.page === 'web') {
+      $divToOpen = this.$webProjects;
+    } else if (app.page === 'games') {
+      $divToOpen = this.$games;
+    } else if (app.page === 'writing') {
+      $divToOpen = this.$writing;
     } else {
-      this.openSearchView();
+      $divToOpen = this.$contact;
     }
+
+    $('.collapsible').each(function () {
+      $(this).addClass('collapsed');
+    });
+    $divToOpen.find('.collapsible')
+              .andSelf()
+              .filter('.collapsible')
+              .each(function () {
+      $(this).removeClass('collapsed');
+    });
   },
 
   updateNavBar: function () {
     this.$('.page-link')
       .removeClass('selected')
-      .filter('[href="#/' + (app.page || 'search') + '"]')
+      .filter('[href="#/' + (app.page || 'contact') + '"]')
       .addClass('selected');
-  },
-
-  openSearchView: function () {
-    this.searchView.clearSearchResults();
-    this.searchView.$el.removeClass('hidden');
-    this.trackersView.$el.addClass('hidden');
-    this.timelineView.$el.addClass('hidden');
-  },
-
-  openTrackersView: function () {
-    this.trackersView.render();
-    this.trackersView.$el.removeClass('hidden');
-    this.searchView.$el.addClass('hidden');
-    this.timelineView.$el.addClass('hidden');
-  },
-
-  openTimelineView: function () {
-    this.timelineView.open();
-    this.timelineView.$el.removeClass('hidden');
-    this.searchView.$el.addClass('hidden');
-    this.trackersView.$el.addClass('hidden');
-    // re-render timeline chart so it can fit to its container.
-    this.timelineView.renderChart();
   }
-  */
 
 });

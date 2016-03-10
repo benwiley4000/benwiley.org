@@ -44,7 +44,7 @@ data.web = {
       "title": "Collabra Practice Tools",
       "image": "practice_tools.gif",
       "link": "http://collabrapracticetools.benwiley.org/",
-      "description": "Fast and intuitive Web Audio-based pitch-checking and metronome tools. Musicians use them each day while recording via Collabra's online platform.",
+      "description": "Fast and intuitive Web Audio-based pitch-checking and metronome tools. Musicians use them each day while recording via Collabra's online platform. (Uses web tech that might not be supported in Safari or IE.)",
       "fields": [
         {
           "name": "Framework",
