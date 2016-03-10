@@ -15,15 +15,15 @@
       <div class="top_stripe"></div>
       <h1 class="title">Ben Wiley</h1>
 
-      <div id="contact" class="contact collapsible">
+    </header>
+
+    <main class="main">
+
+      <div id="contact" class="contact content_page collapsible">
         <div class="contact_link"><a href="mailto:therealbenwiley@gmail.com" target="_blank">therealbenwiley@gmail.com</a></div>
         <div class="contact_link"><a href="https://twitter.com/benwiley4000" target="_blank">@benwiley4000</a></div>
         <div class="contact_link"><a href="https://github.com/benwiley4000" target="_blank">github.com/benwiley4000</a></div>
       </div>
-
-    </header>
-
-    <main class="main">
 
       <div id="web_projects" class="web_projects portfolio_container">
 
@@ -71,6 +71,12 @@
     <div class="portfolio_item collapsible collapsed">
       <h2 class="portfolio_item_header"><%= title %></h2>
       <img class="portfolio_item_image" src="images/<%= image %>" alt="Preview of <%= title %>">
+      <% if (typeof link !== 'undefined' && link) { %>
+        <div class="portfolio_item_info"><a href="<%= link %>" target="_blank">Check it out online!</a></div>
+      <% } %>
+      <% if (typeof github !== 'undefined' && github) { %>
+        <div class="portfolio_item_info"><a href="<%= github %>" target="_blank">Fork me on GitHub!</a></div>
+      <% } %>
       <div class="portfolio_item_info"><%= description %></div>
       <% fields.forEach(function (field) { %>
         <div class="portfolio_item_info">
