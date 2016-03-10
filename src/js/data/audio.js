@@ -4,7 +4,7 @@ data.audio = {
   "path": "audio/",
   "tracks": [
     {
-      "title": "Marty McPaper's Epic Delivery Service",
+      "title": "Marty McPaper: Epic Delivery Service",
       "file": "marty_mcpaper_theme.mp3"
     }, {
       "title": "In the Hall of the Mountain King",

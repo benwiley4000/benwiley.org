@@ -8,6 +8,7 @@ app.AppView = Backbone.View.extend({
 
   initialize: function () {
     this.$webProjects = this.$('#web_projects');
+    this.$games = this.$('#games');
 
     this.audioPlayerView = new app.AudioPlayerView();
     setTimeout(function() {
@@ -29,6 +30,7 @@ app.AppView = Backbone.View.extend({
 
   render: function () {
     this.renderWebProjects();
+    this.renderGames();
   },
 
   renderWebProjects: function () {
@@ -39,6 +41,17 @@ app.AppView = Backbone.View.extend({
 
     data.web.projects.forEach(function (project) {
       $webProjects.append(projectTemplate(project));
+    });
+  },
+
+  renderGames: function () {
+    var $games = this.$games;
+    $games.html('');
+
+    var projectTemplate = _.template($('#portfolio_item_template').html());
+
+    data.games.games.forEach(function (game) {
+      $games.append(projectTemplate(game));
     });
   }
 
