@@ -7,7 +7,7 @@ data.web = {
       "image": "track_your_calories.gif",
       "link": "benwiley4000.github.io/calorie_tracker_backbone/",
       "github": "https://github.com/benwiley4000/calorie_tracker_backbone",
-      "description": "Watch your calorie intake over time. Queries <a href='http://www.nutritionix.com/' target='_blank'>Nutritionix</a> Health API for food information, and stores data locally in your machine's web browser.",
+      "description": "Watch your calorie intake over time. Queries <a href='http://www.nutritionix.com/' target='_blank'>Nutritionix</a> Health API for food information, and stores data locally in your device's web browser.",
       "fields": [
         {
           "name": "Framework",
