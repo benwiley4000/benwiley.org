@@ -26,11 +26,11 @@ data.games = {
       "fields": [
         {
           "name": "Studio",
-          "content": "<a href='http://saidyeti.com/' target='_blank'>Said Yeti</a>"
+          "content": "<a href='http://twoscoopgames.com/' target='_blank'>Two Scoop Games</a>"
         },
         {
           "name": "Engine",
-          "content": "<a href='http://www.html5quintus.com/' target='_blank'>Quintus</a>"
+          "content": "<a href='http://splatjs.com/' target='_blank'>Splat ECS</a>"
         }
       ]
     }

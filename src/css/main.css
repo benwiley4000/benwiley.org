@@ -14,15 +14,15 @@ a {
   text-decoration: none;
   color: #6495ed;
 }
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .content {
   display: flex;
   flex-direction: column;
   font-family: 'Josefin Sans', serif;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .top_stripe {
   height: 10px;
@@ -55,6 +55,12 @@ a {
 .page-link.selected {
   border-bottom: 3px solid #6495ee;
 }
+.main {
+  margin-bottom: 50px;
+  width: 90vw;
+  max-width: 1300px;
+  align-self: center;
+}
 .contact {
   display: flex;
   flex-direction: column;
@@ -71,9 +77,6 @@ a {
 }
 .contact_link:hover {
   text-decoration: underline;
-}
-.main {
-  margin-bottom: 50px;
 }
 .portfolio_container {
   display: flex;
