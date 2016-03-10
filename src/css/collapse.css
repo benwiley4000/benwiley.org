@@ -1,9 +1,11 @@
 .collapsible {
-  transition: max-height 1s, transform 1s;
+  transition: max-height 1s, transform 1s, margin 1s;
 }
 .collapsible.collapsed {
   max-height: 0;
   transform: scaleY(0);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .contact {
   max-height: 190px;
