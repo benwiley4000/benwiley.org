@@ -5,19 +5,22 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Ben Wiley</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <div class="content">
 
     <header class="header">
+
       <div class="top_stripe"></div>
       <h1 class="title">Ben Wiley</h1>
-      <div class="contact">
+
+      <div id="contact" class="contact collapsible">
         <div class="contact_link"><a href="mailto:therealbenwiley@gmail.com" target="_blank">therealbenwiley@gmail.com</a></div>
         <div class="contact_link"><a href="https://twitter.com/benwiley4000" target="_blank">@benwiley4000</a></div>
         <div class="contact_link"><a href="https://github.com/benwiley4000" target="_blank">github.com/benwiley4000</a></div>
       </div>
+
     </header>
 
     <main class="main">
@@ -25,6 +28,7 @@
     </main>
 
     <footer id="audio_player" class="audio_player">
+
       <div class="audio_controls">
         <div id="play_pause_button" class="play_pause_button audio_button paused">
           <div class="play_pause_inner">
@@ -36,6 +40,7 @@
         </div>
         <div id="skip_button" class="skip_button audio_button"></div>
       </div>
+
       <div class="audio_progress_container">
         <div id="audio_progress" class="audio_progress"></div>
         <div id="audio_progress_overlay" class="audio_progress_overlay">
@@ -45,11 +50,12 @@
           <div id="audio_time_progress" class="audio_time_progress"></div>
         </div>
       </div>
+
     </footer>
 
   </div>
 
   <script src="libs.js"></script>
-  <script src="main.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>

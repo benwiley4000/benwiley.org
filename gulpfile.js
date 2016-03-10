@@ -10,7 +10,8 @@ var minifyCSS = require('gulp-minify-css');
 gulp.task('copy', [
   'copy:html',
   'copy:libs',
-  'copy:audio'
+  'copy:audio',
+  'copy:images'
 ]);
 
 gulp.task('copy:html', function () {
@@ -36,17 +37,19 @@ gulp.task('copy:audio', function () {
     .pipe(gulp.dest('dist/audio/'));
 });
 
+gulp.task('copy:images', function () {
+  return gulp.src('src/images/*')
+    .pipe(plumber())
+    .pipe(gulp.dest('dist/images/'));
+});
+
 gulp.task('buildjs', function () {
-  return gulp.src([
-    'app/views/*.js',
-    'app/routers/*.js',
-    'app/app.js'
-  ], { cwd: 'src/js/' })
+  return gulp.src('src/js/**/*.js')
     .pipe(plumber())
     .pipe(concat('all.js'))
     .pipe(uglify())
-    .pipe(rename('main.js'))
-    .pipe(gulp.dest('dist/'), { cwd: '../../' });
+    .pipe(rename('index.js'))
+    .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('lint', function () {
@@ -62,7 +65,7 @@ gulp.task('styles', function () {
     .pipe(concat('all.css'))
     .pipe(autoprefixer({ browsers: ['> 2%'] }))
     .pipe(minifyCSS())
-    .pipe(rename('main.css'))
+    .pipe(rename('index.css'))
     .pipe(gulp.dest('dist/'), { cwd: '../../' });
 });
 

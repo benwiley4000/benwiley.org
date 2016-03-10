@@ -1,0 +1,8 @@
+.collapsible.collapsed {
+  max-height: 0;
+  transform: scaleY(0);
+}
+
+.contact {
+  max-height: 175px;
+}
