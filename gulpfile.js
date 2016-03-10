@@ -71,7 +71,7 @@ gulp.task('styles', function () {
 
 gulp.task('watch', function () {
   gulp.watch('src/index.html', ['copy:html']);
-  gulp.watch('src/js/app/**/*.js', ['buildjs', 'lint']);
+  gulp.watch('src/js/**/*.js', ['buildjs', 'lint']);
   gulp.watch('src/css/*.css', ['styles']);
 });
 

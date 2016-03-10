@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <div class="content">
+  <div id="content" class="content">
 
     <header class="header">
 
@@ -24,6 +24,18 @@
     </header>
 
     <main class="main">
+
+      <div id="web_projects" class="web_projects portfolio_container">
+
+      </div>
+
+      <div id="games" class="games">
+
+      </div>
+
+      <div id="writing" class="writing">
+
+      </div>
       
     </main>
 
@@ -45,7 +57,7 @@
         <div id="audio_progress" class="audio_progress"></div>
         <div id="audio_progress_overlay" class="audio_progress_overlay">
           <div class="audio_info_marquee">
-            <div id="audio_info" class="audio_info">Here is a sample song title I am so excited to share it!</div>
+            <div id="audio_info" class="audio_info"></div>
           </div>
           <div id="audio_time_progress" class="audio_time_progress"></div>
         </div>
@@ -54,6 +66,20 @@
     </footer>
 
   </div>
+
+  <script type="text/template" id="portfolio_item_template">
+    <div class="portfolio_item collapsible collapsed">
+      <h2 class="portfolio_item_header"><%= title %></h2>
+      <img class="portfolio_item_image" src="images/<%= image %>" alt="Preview of <%= title %>">
+      <div class="portfolio_item_info"><%= description %></div>
+      <% fields.forEach(function (field) { %>
+        <div class="portfolio_item_info">
+          <div class="field_name"><%= field.name %></div>
+          <div class="field_content"><%= field.content %></div>
+        </div>
+      <% }); %>
+    </div>
+  </script>
 
   <script src="libs.js"></script>
   <script src="index.js"></script>

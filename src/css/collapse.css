@@ -1,8 +1,13 @@
+.collapsible {
+  transition: max-height 1s, transform 1s;
+}
 .collapsible.collapsed {
   max-height: 0;
   transform: scaleY(0);
 }
-
 .contact {
   max-height: 175px;
+}
+.portfolio_item {
+  max-height: 700px;
 }

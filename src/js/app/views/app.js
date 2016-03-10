@@ -1,4 +1,5 @@
 var app = app || {};
+var data = data || {};
 
 // top-level UI
 app.AppView = Backbone.View.extend({
@@ -6,12 +7,16 @@ app.AppView = Backbone.View.extend({
   el: '#content',
 
   initialize: function () {
+    this.$webProjects = this.$('#web_projects');
+
     this.audioPlayerView = new app.AudioPlayerView();
     setTimeout(function() {
       this.audioPlayerView.togglePause(false);
     }.bind(this), 500);
 
     $(document).keydown(this.toggleAudioPause.bind(this));
+
+    this.render();
   },
 
   toggleAudioPause: function (e) {
@@ -20,6 +25,21 @@ app.AppView = Backbone.View.extend({
     }
     e.preventDefault();
     this.audioPlayerView.togglePause();
+  },
+
+  render: function () {
+    this.renderWebProjects();
+  },
+
+  renderWebProjects: function () {
+    var $webProjects = this.$webProjects;
+    $webProjects.html('');
+
+    var projectTemplate = _.template($('#portfolio_item_template').html());
+
+    data.web.projects.forEach(function (project) {
+      $webProjects.append(projectTemplate(project));
+    });
   }
 
   /*

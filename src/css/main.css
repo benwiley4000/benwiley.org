@@ -47,11 +47,16 @@ img {
   text-decoration: underline;
 }
 .main {
-
+  margin-bottom: 50px;
+}
+.portfolio_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .portfolio_item {
   width: 300px;
-  margin-bottom: 30px;
+  margin: 0 20px 30px;
 }
 .portfolio_item_header {
   padding-left: 10px;
