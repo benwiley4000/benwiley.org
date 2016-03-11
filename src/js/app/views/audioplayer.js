@@ -43,7 +43,7 @@ app.AudioPlayerView = Backbone.View.extend({
   },
 
   togglePause: function (value) {
-    var pause = this.paused = typeof value === 'boolean' ? value : !this.paused;
+    var pause = typeof value === 'boolean' ? value : !this.paused;
     if (pause) {
       this.$playPauseButton.addClass('paused');
       this.audio.pause();
