@@ -41,24 +41,24 @@ app.AppView = Backbone.View.extend({
   },
 
   renderWebProjects: function () {
-    var $webProjects = this.$webProjects;
-    $webProjects.html('');
+    var $portfolio = this.$webProjects.find('.portfolio_container');
+    $portfolio.html('');
 
     var projectTemplate = _.template($('#portfolio_item_template').html());
 
     data.web.projects.forEach(function (project) {
-      $webProjects.append(projectTemplate(project));
+      $portfolio.append(projectTemplate(project));
     });
   },
 
   renderGames: function () {
-    var $games = this.$games;
-    $games.html('');
+    var $portfolio = this.$games.find('.portfolio_container');
+    $portfolio.html('');
 
     var projectTemplate = _.template($('#portfolio_item_template').html());
 
     data.games.games.forEach(function (game) {
-      $games.append(projectTemplate(game));
+      $portfolio.append(projectTemplate(game));
     });
   },
 

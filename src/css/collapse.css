@@ -10,6 +10,9 @@
 .contact {
   max-height: 190px;
 }
+.projects_page_description {
+  max-height: 240px;
+}
 .portfolio_item {
   max-height: 750px;
 }
@@ -17,5 +20,5 @@
   max-height: 35px;
 }
 .article {
-  max-height: 130px;
+  max-height: 190px;
 }
