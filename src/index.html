@@ -90,23 +90,21 @@
   </div>
 
   <script type="text/template" id="portfolio_item_template">
-    <div class="portfolio_item collapsible collapsed">
-      <h2 class="portfolio_item_header"><%= title %></h2>
-      <img class="portfolio_item_image" src="img/<%= image %>" alt="Preview of <%= title %>">
-      <% if (typeof link !== 'undefined' && link) { %>
-        <div class="portfolio_item_info"><a href="<%= link %>" target="_blank">Check it out online!</a></div>
-      <% } %>
-      <% if (typeof github !== 'undefined' && github) { %>
-        <div class="portfolio_item_info"><a href="<%= github %>" target="_blank">Fork me on GitHub!</a></div>
-      <% } %>
-      <div class="portfolio_item_info"><%= description %></div>
-      <% fields.forEach(function (field) { %>
-        <div class="portfolio_item_info">
-          <div class="field_name"><%= field.name %></div>
-          <div class="field_content"><%= field.content %></div>
-        </div>
-      <% }); %>
-    </div>
+    <h2 class="portfolio_item_header"><%= title %></h2>
+    <img class="portfolio_item_image" src="img/<%= jpg %>" alt="Preview of <%= title %>">
+    <% if (typeof link !== 'undefined' && link) { %>
+      <div class="portfolio_item_info"><a href="<%= link %>" target="_blank">Check it out online!</a></div>
+    <% } %>
+    <% if (typeof github !== 'undefined' && github) { %>
+      <div class="portfolio_item_info"><a href="<%= github %>" target="_blank">Fork me on GitHub!</a></div>
+    <% } %>
+    <div class="portfolio_item_info"><%= description %></div>
+    <% fields.forEach(function (field) { %>
+      <div class="portfolio_item_info">
+        <div class="field_name"><%= field.name %></div>
+        <div class="field_content"><%= field.content %></div>
+      </div>
+    <% }); %>
   </script>
 
   <script type="text/template" id="article_category_template">

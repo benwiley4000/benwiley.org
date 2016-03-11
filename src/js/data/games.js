@@ -4,7 +4,8 @@ data.games = {
   "games": [
     {
       "title": "Marty McPaper: Epic Delivery Service",
-      "image": "marty_mcpaper.gif",
+      "jpg": "marty_mcpaper.jpg",
+      "gif": "marty_mcpaper.gif",
       "link": "http://martymcpaper.saidyeti.com/",
       "description": "You're Marty McPaper, a delivery boy for the Tub County Herald. You're headed down Obstructive Lane, serving papers to Tub County's most affluent residential area. Watch out - don't break their windows!",
       "fields": [
@@ -20,7 +21,8 @@ data.games = {
     },
     {
       "title": "Cluster Junk: The Secret of Trash Island",
-      "image": "cluster_junk.gif",
+      "jpg": "cluster_junk.jpg",
+      "gif": "cluster_junk.gif",
       "link": "http://twoscoopgames.com/ld34/",
       "description": "Once upon a time, a soggy cardboard box dreamed of growing to become the largest island of trash in the entire Pacific Ocean. You are that cardboard box!",
       "fields": [

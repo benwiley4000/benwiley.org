@@ -47,7 +47,7 @@ app.AppView = Backbone.View.extend({
     var projectTemplate = _.template($('#portfolio_item_template').html());
 
     data.web.projects.forEach(function (project) {
-      $portfolio.append(projectTemplate(project));
+      $portfolio.append(new app.PortfolioItemView(project).render().$el);
     });
   },
 
@@ -58,7 +58,7 @@ app.AppView = Backbone.View.extend({
     var projectTemplate = _.template($('#portfolio_item_template').html());
 
     data.games.games.forEach(function (game) {
-      $portfolio.append(projectTemplate(game));
+      $portfolio.append(new app.PortfolioItemView(game).render().$el);
     });
   },
 
