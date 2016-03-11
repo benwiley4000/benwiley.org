@@ -12,7 +12,8 @@ gulp.task('copy', [
   'copy:libs',
   'copy:audio',
   'copy:images',
-  'copy:documents'
+  'copy:documents',
+  'copy:favicon'
 ]);
 
 gulp.task('copy:html', function () {
@@ -48,6 +49,12 @@ gulp.task('copy:documents', function () {
   return gulp.src('src/doc/*')
     .pipe(plumber())
     .pipe(gulp.dest('dist/doc/'));
+});
+
+gulp.task('copy:favicon', function () {
+  return gulp.src('src/favicon.ico')
+    .pipe(plumber())
+    .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('buildjs', function () {
