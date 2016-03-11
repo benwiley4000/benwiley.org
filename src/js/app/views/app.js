@@ -7,6 +7,8 @@ app.AppView = Backbone.View.extend({
   el: '#content',
 
   initialize: function () {
+    this.$main = this.$('#main');
+
     this.$contact = this.$('#contact');
     this.$webProjects = this.$('#web_projects');
     this.$games = this.$('#games');
@@ -35,6 +37,7 @@ app.AppView = Backbone.View.extend({
   render: function () {
     this.renderWebProjects();
     this.renderGames();
+    this.renderWriting();
   },
 
   renderWebProjects: function () {
@@ -59,6 +62,17 @@ app.AppView = Backbone.View.extend({
     });
   },
 
+  renderWriting: function () {
+    var $writing = this.$writing;
+    $writing.html('');
+
+    var categoryTemplate = _.template($('#article_category_template').html());
+
+    data.writing.categories.forEach(function (category) {
+      $writing.append(categoryTemplate(category));
+    });
+  },
+
   swapView: function () {
     this.updateNavBar();
 
@@ -73,13 +87,31 @@ app.AppView = Backbone.View.extend({
       $divToOpen = this.$contact;
     }
 
+    var $targets = $divToOpen
+      .find('.collapsible.collapsed')
+      .andSelf()
+      .filter('.collapsible.collapsed');
+
+    if (!$targets.length) {
+      return;
+    }
+
     $('.collapsible').each(function () {
       $(this).addClass('collapsed');
     });
-    $divToOpen.find('.collapsible')
-              .andSelf()
-              .filter('.collapsible')
-              .each(function () {
+
+    // move element end so it will open from the bottom
+    this.$main.append($divToOpen);
+    /* query max-height to trigger reflow;
+     * if we don't then the layout won't be
+     * ready for the CSS transition to work.
+     * we don't need to do anything with the
+     * returned value.
+     * why? http://stackoverflow.com/a/24195559/4956731
+     */
+    $targets.css('max-height');
+
+    $targets.each(function () {
       $(this).removeClass('collapsed');
     });
   },

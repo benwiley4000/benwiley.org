@@ -60,6 +60,8 @@ a {
   width: 90vw;
   max-width: 1300px;
   align-self: center;
+  display: flex;
+  flex-direction: column;
 }
 .contact {
   display: flex;
@@ -100,6 +102,16 @@ a {
   margin-bottom: 12px;
 }
 .portfolio_item_info .field_name {
+  font-weight: bold;
+}
+.writing {
+  max-width: 440px;
+  align-self: center;
+}
+.article {
+  margin: 0 20px 30px;
+}
+.article_link {
   font-weight: bold;
 }
 

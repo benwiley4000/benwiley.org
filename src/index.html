@@ -31,9 +31,9 @@
 
     </header>
 
-    <main class="main">
+    <main id="main" class="main">
 
-      <div id="contact" class="contact content_page collapsible">
+      <div id="contact" class="contact content_page collapsible collapsed">
         <div class="contact_link"><a href="mailto:therealbenwiley@gmail.com" target="_blank">therealbenwiley@gmail.com</a></div>
         <div class="contact_link"><a href="https://twitter.com/benwiley4000" target="_blank">@benwiley4000</a></div>
         <div class="contact_link"><a href="https://github.com/benwiley4000" target="_blank">github.com/benwiley4000</a></div>
@@ -84,7 +84,7 @@
   <script type="text/template" id="portfolio_item_template">
     <div class="portfolio_item collapsible collapsed">
       <h2 class="portfolio_item_header"><%= title %></h2>
-      <img class="portfolio_item_image" src="images/<%= image %>" alt="Preview of <%= title %>">
+      <img class="portfolio_item_image" src="img/<%= image %>" alt="Preview of <%= title %>">
       <% if (typeof link !== 'undefined' && link) { %>
         <div class="portfolio_item_info"><a href="<%= link %>" target="_blank">Check it out online!</a></div>
       <% } %>
@@ -99,6 +99,19 @@
         </div>
       <% }); %>
     </div>
+  </script>
+
+  <script type="text/template" id="article_category_template">
+    <h2 class="article_category_header collapsible collapsed"><%= name %></h2>
+    <% items.forEach(function (item) { %>
+      <div class="article collapsible collapsed">
+        <div class="article_date"><%= new Date(item.date).toLocaleDateString() %></div>
+        <div class="article_link"><a href="<%= item.link %>" target="_blank"><%= item.title %></a></div>
+        <% if (item.subtitle) { %>
+          <div class="article_subtitle"><%= item.subtitle %></div>
+        <% } %>
+      </div>
+    <% }); %>
   </script>
 
   <script src="libs.js"></script>

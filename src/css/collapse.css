@@ -13,3 +13,9 @@
 .portfolio_item {
   max-height: 750px;
 }
+.article_category_header {
+  max-height: 35px;
+}
+.article {
+  max-height: 130px;
+}
