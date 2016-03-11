@@ -43,6 +43,7 @@ app.AudioPlayerView = Backbone.View.extend({
     if (pause) {
       this.$playPauseButton.addClass('paused');
       this.audio.pause();
+      this.paused = true;
       return;
     }
     try {
