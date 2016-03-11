@@ -78,7 +78,7 @@
 .audio_info_marquee {
   overflow: hidden;
   /* to make room for .time_progress */
-  width: calc(100% - 174px);
+  width: calc(100% - 176px);
   display: flex;
   flex-direction: row;
   align-items: center;
