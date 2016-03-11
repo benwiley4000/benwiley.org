@@ -87,7 +87,7 @@
 .audio_info {
   display: none;
   width: 100%;
-  white-space: nowrap;
+  white-space: nowrap; 
   word-break: break-all;
   margin: 0;
   font-size: 19.2px;
@@ -100,7 +100,6 @@
   font-size: 23px;
 }
 
-/* http://codepen.io/aralon/pen/NqGWXZ */
 .audio_button {
   padding-left: 11px;
   padding-right: 11px;
@@ -108,20 +107,20 @@
   margin-right: 4px;
   cursor: pointer;
   align-self: center;
-}
-.play_pause_button {
   display: flex;
   justify-content: center;
   flex-direction: column;
   height: 50px;
 }
-.play_pause_inner {
+
+/* http://codepen.io/aralon/pen/NqGWXZ */
+.play_pause_button .play_pause_inner {
   height: 30px;
   width: 30px;
   overflow: hidden;
   position: relative;
 }
-.left {
+.play_pause_button .left {
   height: 100%;
   float: left;
   background-color: #fff;
@@ -129,14 +128,14 @@
   transition: all 0.25s ease;
   overflow: hidden;
 }
-.triangle_1 {
+.play_pause_button .triangle_1 {
   transform: translate(0, -100%);
 }
-.triangle_2 {
+.play_pause_button .triangle_2 {
   transform: translate(0, 100%);
 }
-.triangle_1,
-.triangle_2 {
+.play_pause_button .triangle_1,
+.play_pause_button .triangle_2 {
   position: absolute;
   top: 0;
   right: 0;
@@ -148,34 +147,36 @@
   border-bottom: 15px solid transparent;
   transition: transform 0.25s ease;
 }
-.right {
+.play_pause_button .right {
   height: 100%;
   float: right;
   width: 36%;
   background-color: #fff;
   transition: all 0.25s ease;
 }
-.paused .left {
+.play_pause_button.paused .left {
   width: 50%;
 }
-.paused .right {
+.play_pause_button.paused .right {
   width: 50%;
 }
-.paused .triangle_1 {
+.play_pause_button.paused .triangle_1 {
   transform: translate(0, -50%);
 }
-.paused .triangle_2 {
+.play_pause_button.paused .triangle_2 {
   transform: translate(0, 50%);
 }
 
-.skip_button {
-  color: #fff;
-  font-size: 48px;
-  line-height: 50px;
+.skip_button .skip_button_inner {
+  display: flex;
+  flex-direction: row;
 }
-.skip_button::after {
-  /* ( '⏩'' ) */
-  content: '\23e9';
+.skip_button .right_facing_triangle {
+  width: 0;
+  height: 0;
+  border-left: 16px solid #fff;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
 }
 
 @media screen and (min-width: 370px) {
