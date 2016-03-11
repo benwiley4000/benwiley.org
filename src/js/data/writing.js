@@ -7,7 +7,7 @@ data.writing = {
       "items": [
         {
           "title": "Narrative Identity as Means for Understanding and Criticizing <i>The Two-Income Trap</i>",
-          "subtitle": "Critical analysis of Senator Elizabeth Warren and daughter Amelia Tyagi's acclaimed book.",
+          "subtitle": "Critical analysis of Senator Elizabeth Warren and daughter Amelia Tyagi's acclaimed book. Focuses on the role of race in middle-class families' flight to public schools in suburban neighborhoods.",
           "date": "11 May 2015",
           "link": "doc/narrative-identity-warren.pdf"
         },
