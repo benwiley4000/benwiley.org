@@ -1,7 +1,7 @@
 # benwiley.org
 http://benwiley.org
 
-A personal site I designed, pour moi. Complicated view management stuff done with Backbone.js.
+A personal site I designed and built, pour moi. Complicated view management stuff done with Backbone.js.
 
 Features
 --------
