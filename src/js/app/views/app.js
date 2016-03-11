@@ -15,9 +15,11 @@ app.AppView = Backbone.View.extend({
     this.$writing = this.$('#writing');
 
     this.audioPlayerView = new app.AudioPlayerView();
-    setTimeout(function() {
-      this.audioPlayerView.togglePause(false);
-    }.bind(this), 500);
+    if (AUTO_PLAY) {
+      setTimeout(function() {
+        this.audioPlayerView.togglePause(false);
+      }.bind(this), 500);
+    }
 
     $(document).keydown(this.toggleAudioPause.bind(this));
 

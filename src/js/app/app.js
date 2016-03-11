@@ -1,5 +1,6 @@
 var app = app || {};
 var SPACE_BAR = 32;
+var AUTO_PLAY = false;
 
 // source: http://goo.gl/kEvnKn
 Number.prototype.toTime = function () {
