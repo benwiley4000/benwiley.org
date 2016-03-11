@@ -29,11 +29,7 @@ app.AudioPlayerView = Backbone.View.extend({
       this.renderTrackTitle();
       this.renderTimeProgress();
     }.bind(this));
-    /* state will change and class will toggle if play
-     * is successful (one likely scenario where it won't
-     * be successful is when autoplay is disabled in a
-     * mobile browser).
-     */
+    // state will change and class will toggle if play is successful
     audio.addEventListener('play', function () {
       this.paused = false;
       this.$playPauseButton.removeClass('paused');
@@ -49,8 +45,16 @@ app.AudioPlayerView = Backbone.View.extend({
       this.audio.pause();
       return;
     }
-    // attempt play
-    this.audio.play();
+    try {
+      this.audio.play();
+    } catch (e) {
+      console.error(e);
+      var warningMessage =
+        'Audio playback failed at ' +
+        new Date().toLocaleTimeString() +
+        '! (Perhaps autoplay is disabled in this browser.)';
+      console.warn(warningMessage);
+    }
   },
 
   skipToNextTrack: function () {

@@ -8,6 +8,9 @@ Number.prototype.toTime = function () {
   return (mins < 10 ? "0" : "" ) + mins + ":" + (secs < 10 ? "0" : "" ) + secs;
 };
 
+console.error = console.error || console.log;
+console.warn = console.warn || console.log;
+
 $(function () {
   app.appView = new app.AppView();
   Backbone.history.start();
