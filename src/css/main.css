@@ -70,7 +70,6 @@ a {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: max-height 1s, transform 1s;
   font-size: 25px;
   align-items: center;
 }
@@ -102,7 +101,8 @@ a {
   justify-content: space-around;
 }
 .portfolio_item {
-  width: 300px;
+  /* image width + image border */
+  width: 306px;
   margin: 0 20px 30px;
 }
 .portfolio_item_header {
