@@ -29,10 +29,10 @@ data.writing = {
       ]
     },
     {
-      "name": "Reporting",
+      "name": "Journalism",
       "items": [
         {
-          "title": "Indigenous Groups in Papua New Guinea Ready For War with ExxonMobil",
+          "title": "Indigenous Groups in Papua New Guinea Ready for War with ExxonMobil",
           "date": "14 May 2014",
           "link": "http://benwiley4000.kinja.com/indigenous-groups-in-papua-new-guinea-ready-for-war-wit-1576026036"
         }
