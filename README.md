@@ -5,7 +5,7 @@ A personal site I designed and built, pour moi. Complicated view management stuf
 
 Features
 --------
-* A persistent audio player footer that can be paused and skipped.
-* Fast-loading animated GIF previews for all projects.
+* A built-from-scratch persistent audio player footer that supports pausing, skipping and fast, responsive seeking.
+* Fast-loading animated GIF previews for all projects, tap-to-play.
 * Neat CSS3 transitions and animations.
 * Clean and responsive design.
