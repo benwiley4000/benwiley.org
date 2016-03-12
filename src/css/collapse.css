@@ -8,10 +8,7 @@
   margin-bottom: 0;
   opacity: 0;
 }
-.contact {
-  max-height: 190px;
-}
-.projects_page_description {
+.page_description {
   max-height: 240px;
 }
 .portfolio_item {
@@ -22,4 +19,7 @@
 }
 .article {
   max-height: 250px;
+}
+.contact_links {
+  max-height: 190px;
 }

@@ -66,27 +66,11 @@ a {
   display: flex;
   flex-direction: column;
 }
-.contact {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  font-size: 25px;
-  align-items: center;
-}
-.contact_link {
-  padding-bottom: 30px;
-}
-.contact_link a {
-  color: #333;
-}
-.contact_link:hover {
-  text-decoration: underline;
-}
 .projects_page {
   display: flex;
   flex-direction: column;
 }
-.projects_page_description {
+.page_description {
   align-self: center;
   text-align: center;
   font-size: 36px;
@@ -158,6 +142,34 @@ a {
 }
 .article_link {
   font-weight: bold;
+}
+.contact {
+  max-width: 440px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+.contact_links {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  align-items: center;
+}
+.contact_link {
+  padding-bottom: 30px;
+}
+.contact_link a {
+  color: #333;
+}
+.contact_link:hover {
+  text-decoration: underline;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 @media screen and (min-width: 550px) {
