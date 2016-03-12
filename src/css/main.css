@@ -17,9 +17,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-.fork_me_on_github {
-  display: none;
-}
 .content {
   display: flex;
   flex-direction: column;
@@ -39,7 +36,7 @@ a:hover {
   font-size: 64px;
   color: #333;
 }
-.pages-nav {
+.pages_nav {
   font-size: 24px;
   list-style: none;
   display: flex;
@@ -50,15 +47,18 @@ a:hover {
   max-width: 100%;
   padding: 0;
 }
-.pages-nav > li {
+.pages_nav > li {
   margin: 0 20px 40px;
 }
-.page-link {
+.page_link {
   padding-bottom: 2px;
   font-weight: bold;
   color: #333;
 }
-.page-link.selected {
+.page_link:hover {
+  text-decoration: none;
+}
+.page_link.selected {
   border-bottom: 3px solid #6495ee;
 }
 .main {

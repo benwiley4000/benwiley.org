@@ -9,10 +9,10 @@ app.AppView = Backbone.View.extend({
   initialize: function () {
     this.$main = this.$('#main');
 
-    this.$contact = this.$('#contact');
     this.$webProjects = this.$('#web_projects');
     this.$games = this.$('#games');
     this.$writing = this.$('#writing');
+    this.$contact = this.$('#contact');
 
     this.audioPlayerView = new app.AudioPlayerView();
     if (data.options.autoplay) {
@@ -79,14 +79,14 @@ app.AppView = Backbone.View.extend({
     this.updateNavBar();
 
     var $divToOpen = null;
-    if (app.page === 'web') {
-      $divToOpen = this.$webProjects;
-    } else if (app.page === 'games') {
+    if (app.page === 'games') {
       $divToOpen = this.$games;
     } else if (app.page === 'writing') {
       $divToOpen = this.$writing;
-    } else {
+    } else if (app.page === 'contact') {
       $divToOpen = this.$contact;
+    } else {
+      $divToOpen = this.$webProjects;
     }
 
     var $targets = $divToOpen
@@ -119,9 +119,9 @@ app.AppView = Backbone.View.extend({
   },
 
   updateNavBar: function () {
-    this.$('.page-link')
+    this.$('.page_link')
       .removeClass('selected')
-      .filter('[href="#/' + (app.page || 'contact') + '"]')
+      .filter('[href="#/' + (app.page || 'web') + '"]')
       .addClass('selected');
   }
 
