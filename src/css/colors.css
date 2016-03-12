@@ -1,3 +1,13 @@
+a {
+  transition: color 0.4s;
+}
+.top_stripe {
+  transition: background-color 0.4s;
+}
+.page_link.selected {
+  transition: border-bottom-color 0.4s;
+}
+
 .content.red a {
   color: #ed6464;
 }
