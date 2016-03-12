@@ -6,6 +6,16 @@ app.AppView = Backbone.View.extend({
 
   el: '#content',
 
+  events: {
+    'click .top_stripe': 'cycleColor',
+    'touchstart .header': 'recordLastTouchStartY',
+    'touchend .header': 'cycleColorIfCloseEnough'
+  },
+
+  colorIndex: 0,
+
+  lastTouchStartY: null,
+
   initialize: function () {
     this.$main = this.$('#main');
 
@@ -26,6 +36,39 @@ app.AppView = Backbone.View.extend({
     this.on('pageswap', this.swapView);
 
     this.render();
+
+    this.colorIndex = localStorage.getItem('colorIndex') || this.colorIndex;
+    this.applyColor();
+  },
+
+  recordLastTouchStartY: function (e) {
+    this.lastTouchStartY = e.originalEvent.targetTouches.item(0).pageY;
+  },
+
+  cycleColorIfCloseEnough: function () {
+    if (this.lastTouchStartY !== null && this.lastTouchStartY <= 60) {
+      this.cycleColor();
+    }
+  },
+
+  cycleColor: function (e) {
+    if (e) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+    var classnames = data.colors.classnames;
+    this.colorIndex++;
+    if (this.colorIndex >= classnames.length) {
+      this.colorIndex = 0;
+    }
+    localStorage.setItem('colorIndex', this.colorIndex);
+    this.applyColor();
+  },
+
+  applyColor: function () {
+    var classnames = data.colors.classnames;
+    this.$el.removeClass(classnames.join(' '))
+      .addClass(classnames[this.colorIndex]);
   },
 
   toggleAudioPause: function (e) {

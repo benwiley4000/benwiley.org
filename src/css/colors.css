@@ -1,0 +1,79 @@
+.content.red a {
+  color: #ed6464;
+}
+.content.red .top_stripe {
+  background-color: #ed6464;
+}
+.content.red .page_link.selected {
+  border-bottom: 3px solid #ed6464;
+}
+
+.content.orange a {
+  color: #ed8564;
+}
+.content.orange .top_stripe {
+  background-color: #ed8564;
+}
+.content.orange .page_link.selected {
+  border-bottom: 3px solid #ed8564;
+}
+
+.content.yellow a {
+  color: #edca64;
+}
+.content.yellow .top_stripe {
+  background-color: #edca64;
+}
+.content.yellow .page_link.selected {
+  border-bottom: 3px solid #edca64;
+}
+
+.content.green a {
+  color: #7eed64;
+}
+.content.green .top_stripe {
+  background-color: #7eed64;
+}
+.content.green .page_link.selected {
+  border-bottom: 3px solid #7eed64;
+}
+
+.content.turquoise a {
+  color: #64eddb;
+}
+.content.turquoise .top_stripe {
+  background-color: #64eddb;
+}
+.content.turquoise .page_link.selected {
+  border-bottom: 3px solid #64eddb;
+}
+
+.content.blue a {
+  color: #6495ed;
+}
+.content.blue .top_stripe {
+  background-color: #6495ed;
+}
+.content.blue .page_link.selected {
+  border-bottom: 3px solid #6495ed;
+}
+
+.content.violet a {
+  color: #9a64ed;
+}
+.content.violet .top_stripe {
+  background-color: #9a64ed;
+}
+.content.violet .page_link.selected {
+  border-bottom: 3px solid #9a64ed;
+}
+
+.content.magenta a {
+  color: #ed64af;
+}
+.content.magenta .top_stripe {
+  background-color: #ed64af;
+}
+.content.magenta .page_link.selected {
+  border-bottom: 3px solid #ed64af;
+}

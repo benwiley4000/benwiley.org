@@ -2,7 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #fff9f2;
+  background-color: #fffef6;
 }
 body {
   font-size: 18px;
@@ -12,7 +12,6 @@ img {
 }
 a {
   text-decoration: none;
-  color: #6495ed;
 }
 a:hover {
   text-decoration: underline;
@@ -29,8 +28,8 @@ a:hover {
 }
 .top_stripe {
   height: 10px;
-  background-color: #6495ed;
   width: 100%;
+  cursor: pointer;
 }
 .title {
   font-size: 64px;
@@ -53,13 +52,10 @@ a:hover {
 .page_link {
   padding-bottom: 2px;
   font-weight: bold;
-  color: #333;
+  color: #333 !important;
 }
 .page_link:hover {
   text-decoration: none;
-}
-.page_link.selected {
-  border-bottom: 3px solid #6495ee;
 }
 .main {
   margin-bottom: 80px;
