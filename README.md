@@ -6,6 +6,6 @@ A personal site I designed and built, pour moi. Complicated view management stuf
 Features
 --------
 * A persistent audio player footer that can be paused and skipped.
-* Reasonably fast-loading animated GIF previews for all projects.
-* A neat effect on view swap: container collapsing with `max-height:0;transform:scaleY(0)`.
+* Fast-loading animated GIF previews for all projects.
+* Neat CSS3 transitions and animations.
 * Clean and responsive design.
