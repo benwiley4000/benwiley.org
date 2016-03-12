@@ -3,6 +3,17 @@ var data = data || {};
 data.writing = {
   "categories": [
     {
+      "name": "Computer Science",
+      "items": [
+        {
+          "title": "Implementing an Ant Swarm Intelligence-Based Approach to Balancing Communication Network Loads",
+          "subtitle": "Investigating a decentralized network traffic routing algorithm based on real-world behavior of ant colonies (with Tommy Rhodes).",
+          "date": "6 May 2015",
+          "link": "doc/ant-intelligence.pdf"
+        }
+      ]
+    },
+    {
       "name": "Sociology",
       "items": [
         {
@@ -28,17 +39,6 @@ data.writing = {
           "subtitle": "Confronting and then sidestepping Marx and Foucault's irreconcilable differences in search for a sound theory of social change.",
           "date": "17 May 2013",
           "link": "doc/narrative-identity-warren.pdf"
-        }
-      ]
-    },
-    {
-      "name": "Computer Science",
-      "items": [
-        {
-          "title": "Implementing an Ant Swarm Intelligence-Based Approach to Balancing Communication Network Loads",
-          "subtitle": "Investigating a decentralized network traffic routing algorithm based on real-world behavior of ant colonies (with Tommy Rhodes).",
-          "date": "6 May 2015",
-          "link": "doc/ant-intelligence.pdf"
         }
       ]
     },
