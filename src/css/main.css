@@ -108,9 +108,38 @@ a {
 .portfolio_item_header {
   padding-left: 10px;
 }
+.portfolio_item_image_container {
+  position: relative;
+  margin-bottom: 20px;
+}
+.portfolio_item_image_container .gif_play_button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  transition: transform 0.4s, opacity 0.4s;
+  color: #fff;
+  padding: 14px 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid white;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+  font-size: 24px;
+  cursor: pointer;
+}
+.portfolio_item_image_container.playing .gif_play_button {
+  transform: translate(-50%, -50%) scale(0) rotate(180deg);
+  opacity: 0.5;
+}
+.portfolio_item_image_container .gif_play_button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.7);
+}
+.portfolio_item_image_container .gif_play_button::after {
+  content: 'GIF';
+}
 .portfolio_item_image {
   border: 3px solid rgba(100, 149, 237, 0.15);
-  margin-bottom: 20px;
 }
 .portfolio_item_info {
   padding-left: 10px;
