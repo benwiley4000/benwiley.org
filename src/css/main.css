@@ -14,6 +14,9 @@ a {
   text-decoration: none;
   color: #6495ed;
 }
+a:hover {
+  text-decoration: underline;
+}
 .fork_me_on_github {
   display: none;
 }
