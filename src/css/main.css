@@ -159,12 +159,6 @@ a {
 .contact_link {
   padding-bottom: 30px;
 }
-.contact_link a {
-  color: #333;
-}
-.contact_link:hover {
-  text-decoration: underline;
-}
 .footer {
   display: flex;
   flex-direction: row;
