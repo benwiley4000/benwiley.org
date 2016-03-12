@@ -9,7 +9,7 @@ var PageSwapper = Backbone.Router.extend({
     if (page) {
       page = page.trim();
     }
-    app.page = page || 'contact';
+    app.page = page || 'web';
 
     if (app.appView) {
       app.appView.trigger('pageswap');
