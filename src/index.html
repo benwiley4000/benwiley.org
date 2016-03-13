@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <div id="content" class="content magenta">
+  <div id="content" class="content magenta hiding">
 
     <header class="header">
 
@@ -17,7 +17,10 @@
       <h1 class="title">Ben Wiley</h1>
       <ul id="pages_nav" class="pages_nav">
         <li>
-          <a class="page_link selected" href="#/web">Web</a>
+          <a class="page_link selected" href="#/about">About</a>
+        </li>
+        <li>
+          <a class="page_link" href="#/web">Web</a>
         </li>
         <li>
           <a class="page_link" href="#/games">Games</a>
@@ -34,7 +37,16 @@
 
     <main id="main" class="main">
 
-      <div id="web_projects" class="web_projects projects_page">
+      <div id="about" class="about">
+        <div class="page_description collapsible collapsed">Hi, I'm Ben.</div>
+        <p class="about_content collapsible collapsed">Check out the different tabs to learn about some of what I do.</p>
+        <h3 class="profile_photo_lead collapsible collapsed">Here is a professional photo of me:</h3>
+        <img class="profile_photo collapsible collapsed" src="img/professional_photo.jpg" alt="A professional photo of Ben Wiley">
+        <h3 class="profile_photo_lead collapsible collapsed">Here is an unprofessional photo of me:</h3>
+        <img class="profile_photo collapsible collapsed" src="img/unprofessional_photo.jpg" alt="An unprofessional photo of Ben Wiley">
+      </div>
+
+      <div id="web" class="web projects_page">
         <div class="page_description collapsible collapsed">I build responsive and powerful web apps.</div>
         <div class="portfolio_container"></div>
       </div>
@@ -65,35 +77,35 @@
       
     </footer>
 
-    <div id="audio_player" class="audio_player">
+  </div>
 
-      <div class="audio_controls">
-        <div id="play_pause_button" class="play_pause_button audio_button paused">
-          <div class="play_pause_inner">
-            <div class="left"></div>
-            <div class="right"></div>
-            <div class="triangle_1"></div>
-            <div class="triangle_2"></div>
-          </div>
-        </div>
-        <div id="skip_button" class="skip_button audio_button">
-          <div class="skip_button_inner">
-            <div class="right_facing_triangle"></div>
-            <div class="right_facing_triangle"></div>
-          </div>
+  <div id="audio_player" class="audio_player">
+
+    <div class="audio_controls">
+      <div id="play_pause_button" class="play_pause_button audio_button paused">
+        <div class="play_pause_inner">
+          <div class="left"></div>
+          <div class="right"></div>
+          <div class="triangle_1"></div>
+          <div class="triangle_2"></div>
         </div>
       </div>
-
-      <div id="audio_progress_container" class="audio_progress_container">
-        <div id="audio_progress" class="audio_progress"></div>
-        <div id="audio_progress_overlay" class="audio_progress_overlay">
-          <div class="audio_info_marquee">
-            <div id="audio_info" class="audio_info noselect" draggable="false"></div>
-          </div>
-          <div id="audio_time_progress" class="audio_time_progress noselect" draggable="false"></div>
+      <div id="skip_button" class="skip_button audio_button">
+        <div class="skip_button_inner">
+          <div class="right_facing_triangle"></div>
+          <div class="right_facing_triangle"></div>
         </div>
       </div>
+    </div>
 
+    <div id="audio_progress_container" class="audio_progress_container">
+      <div id="audio_progress" class="audio_progress"></div>
+      <div id="audio_progress_overlay" class="audio_progress_overlay">
+        <div class="audio_info_marquee">
+          <div id="audio_info" class="audio_info noselect" draggable="false"></div>
+        </div>
+        <div id="audio_time_progress" class="audio_time_progress noselect" draggable="false"></div>
+      </div>
     </div>
 
   </div>

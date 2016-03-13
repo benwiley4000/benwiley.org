@@ -19,7 +19,8 @@ app.AppView = Backbone.View.extend({
   initialize: function () {
     this.$main = this.$('#main');
 
-    this.$webProjects = this.$('#web_projects');
+    this.$about = this.$('#about');
+    this.$web = this.$('#web');
     this.$games = this.$('#games');
     this.$writing = this.$('#writing');
     this.$contact = this.$('#contact');
@@ -39,6 +40,14 @@ app.AppView = Backbone.View.extend({
 
     this.colorIndex = localStorage.getItem('colorIndex') || this.colorIndex;
     this.applyColor();
+
+    /* query content opacity to ensure draw happens first
+     * (so we can effect a smooth transition - see explanation
+     * in swapView method)
+     */
+    this.$el.css('opacity');
+    // show content
+    this.$el.removeClass('hiding');
   },
 
   recordLastTouchStartY: function (e) {
@@ -86,7 +95,7 @@ app.AppView = Backbone.View.extend({
   },
 
   renderWebProjects: function () {
-    var $portfolio = this.$webProjects.find('.portfolio_container');
+    var $portfolio = this.$web.find('.portfolio_container');
     $portfolio.html('');
 
     var projectTemplate = _.template($('#portfolio_item_template').html());
@@ -122,14 +131,16 @@ app.AppView = Backbone.View.extend({
     this.updateNavBar();
 
     var $divToOpen = null;
-    if (app.page === 'games') {
+    if (app.page === 'web') {
+      $divToOpen = this.$web;
+    } else if (app.page === 'games') {
       $divToOpen = this.$games;
     } else if (app.page === 'writing') {
       $divToOpen = this.$writing;
     } else if (app.page === 'contact') {
       $divToOpen = this.$contact;
     } else {
-      $divToOpen = this.$webProjects;
+      $divToOpen = this.$about;
     }
 
     var $targets = $divToOpen
@@ -164,7 +175,7 @@ app.AppView = Backbone.View.extend({
   updateNavBar: function () {
     this.$('.page_link')
       .removeClass('selected')
-      .filter('[href="#/' + (app.page || 'web') + '"]')
+      .filter('[href="#/' + (app.page || 'about') + '"]')
       .addClass('selected');
   }
 

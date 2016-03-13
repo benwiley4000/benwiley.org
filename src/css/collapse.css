@@ -1,5 +1,5 @@
 .collapsible {
-  transition: max-height 1s, margin 1s, opacity 0.7s, transform 0.8s;
+  transition: max-height 1s, margin 1s, opacity 0.7s, transform 1s;
 }
 .collapsible.collapsed {
   max-height: 0;
@@ -8,8 +8,18 @@
   margin-bottom: 0;
   opacity: 0;
 }
+img.collapsible {
+  width: 100%;
+}
 .page_description {
   max-height: 240px;
+}
+.about_content,
+.profile_photo_lead {
+  max-height: 50px;
+}
+.profile_photo {
+  max-height: 620px;
 }
 .portfolio_item {
   max-height: 750px;
