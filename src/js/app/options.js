@@ -1,6 +1,6 @@
-var data = data || {};
+var app = app || {};
 
-data.options = {
+app.options = {
   "autoplay": false,
   "spacetoplay": false
 };
