@@ -95,7 +95,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 .portfolio_item {
   /* image width + image border */
@@ -175,5 +175,9 @@ a:hover {
   }
   .title {
     font-size: 128px;
+  }
+  .portfolio_item {
+    margin-left: 60px;
+    margin-right: 60px;
   }
 }
