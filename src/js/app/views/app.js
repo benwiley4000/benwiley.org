@@ -117,13 +117,13 @@ app.AppView = Backbone.View.extend({
   },
 
   renderWriting: function () {
-    var $writing = this.$writing;
-    $writing.html('');
+    var $writingList = this.$writing.find('.writing_list');
+    $writingList.html('');
 
     var categoryTemplate = _.template($('#article_category_template').html());
 
     data.writing.categories.forEach(function (category) {
-      $writing.append(categoryTemplate(category));
+      $writingList.append(categoryTemplate(category));
     });
   },
 

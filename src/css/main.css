@@ -72,7 +72,8 @@ a:hover {
   flex-direction: column;
 }
 .about,
-.contact {
+.contact,
+.writing {
   max-width: 440px;
   align-self: center;
   display: flex;
@@ -88,7 +89,7 @@ a:hover {
   font-size: 36px;
   line-height: 1.5em;
   margin: 0 20px 30px;
-  max-width: 600px;
+  max-width: 440px;
 }
 .portfolio_container {
   display: flex;
@@ -144,10 +145,6 @@ a:hover {
 }
 .portfolio_item_info .field_name {
   font-weight: bold;
-}
-.writing {
-  max-width: 440px;
-  align-self: center;
 }
 .article {
   margin: 0 20px 30px;
