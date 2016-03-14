@@ -14,8 +14,8 @@ a {
 .content.red .top_stripe {
   background-color: #ed6464;
 }
-.content.red .page_link.selected {
-  border-bottom: 3px solid #ed6464;
+.content.red .page_link {
+  border-bottom-color: #ed6464;
 }
 
 .content.orange a {
@@ -24,8 +24,8 @@ a {
 .content.orange .top_stripe {
   background-color: #ed8564;
 }
-.content.orange .page_link.selected {
-  border-bottom: 3px solid #ed8564;
+.content.orange .page_link {
+  border-bottom-color: #ed8564;
 }
 
 .content.yellow a {
@@ -34,8 +34,8 @@ a {
 .content.yellow .top_stripe {
   background-color: #edca64;
 }
-.content.yellow .page_link.selected {
-  border-bottom: 3px solid #edca64;
+.content.yellow .page_link {
+  border-bottom-color: #edca64;
 }
 
 .content.green a {
@@ -44,8 +44,8 @@ a {
 .content.green .top_stripe {
   background-color: #7eed64;
 }
-.content.green .page_link.selected {
-  border-bottom: 3px solid #7eed64;
+.content.green .page_link {
+  border-bottom-color: #7eed64;
 }
 
 .content.turquoise a {
@@ -54,8 +54,8 @@ a {
 .content.turquoise .top_stripe {
   background-color: #64eddb;
 }
-.content.turquoise .page_link.selected {
-  border-bottom: 3px solid #64eddb;
+.content.turquoise .page_link {
+  border-bottom-color: #64eddb;
 }
 
 .content.blue a {
@@ -64,8 +64,8 @@ a {
 .content.blue .top_stripe {
   background-color: #6495ed;
 }
-.content.blue .page_link.selected {
-  border-bottom: 3px solid #6495ed;
+.content.blue .page_link {
+  border-bottom-color: #6495ed;
 }
 
 .content.violet a {
@@ -74,8 +74,8 @@ a {
 .content.violet .top_stripe {
   background-color: #9a64ed;
 }
-.content.violet .page_link.selected {
-  border-bottom: 3px solid #9a64ed;
+.content.violet .page_link {
+  border-bottom-color: #9a64ed;
 }
 
 .content.magenta a {
@@ -84,6 +84,6 @@ a {
 .content.magenta .top_stripe {
   background-color: #ed64af;
 }
-.content.magenta .page_link.selected {
-  border-bottom: 3px solid #ed64af;
+.content.magenta .page_link {
+  border-bottom-color: #ed64af;
 }

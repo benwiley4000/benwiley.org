@@ -59,9 +59,14 @@ a:hover {
   padding-bottom: 2px;
   font-weight: bold;
   color: #333 !important;
+  border-bottom-style: solid;
+  border-bottom-width: 0;
 }
 .page_link:hover {
   text-decoration: none;
+}
+.page_link.selected {
+  border-bottom-width: 3px;
 }
 .main {
   margin-bottom: 80px;
