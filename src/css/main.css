@@ -84,6 +84,9 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
+.blog_notice {
+  align-self: center;
+}
 .projects_page {
   display: flex;
   flex-direction: column;

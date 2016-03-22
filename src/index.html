@@ -52,21 +52,22 @@
       </div>
 
       <div id="games" class="games projects_page">
-        <div class="page_description collapsible collapsed">I code and make music for games with <a href="http://saidyeti.com/" target="_blank">Said Yeti</a>.</div>
+        <div class="page_description collapsible collapsed">I code and make music for games with <a href="http://saidyeti.com/">Said Yeti</a>.</div>
         <div class="portfolio_container"></div>
       </div>
 
       <div id="writing" class="writing">
         <div class="page_description collapsible collapsed">I write things sometimes.</div>
+        <div class="blog_notice collapsible collapsed">(You might want to <a href="http://blog.benwiley.org/">read my blog</a>)</div>
         <div class="writing_list"></div>
       </div>
 
       <div id="contact" class="contact">
         <div class="page_description collapsible collapsed">Get in touch.</div>
         <div class="contact_links collapsible collapsed">
-          <div class="contact_link"><a href="mailto:therealbenwiley@gmail.com" target="_blank">therealbenwiley@gmail.com</a></div>
-          <div class="contact_link"><a href="https://twitter.com/benwiley4000" target="_blank">@benwiley4000</a></div>
-          <div class="contact_link"><a href="https://github.com/benwiley4000" target="_blank">github.com/benwiley4000</a></div>
+          <div class="contact_link"><a href="mailto:therealbenwiley@gmail.com">therealbenwiley@gmail.com</a></div>
+          <div class="contact_link"><a href="https://twitter.com/benwiley4000">@benwiley4000</a></div>
+          <div class="contact_link"><a href="https://github.com/benwiley4000">github.com/benwiley4000</a></div>
         </div>
       </div>
       
@@ -75,7 +76,7 @@
     <footer class="footer">
 
       <p>
-        <a class="fork_me_on_github" href="https://github.com/benwiley4000/benwiley.org" target="_blank">Fork this page on GitHub</a>
+        <a class="fork_me_on_github" href="https://github.com/benwiley4000/benwiley.org">Fork this page on GitHub</a>
       </p>
       
     </footer>
@@ -120,10 +121,10 @@
       <img class="portfolio_item_image" src="img/<%= jpg %>" alt="Preview of <%= title %>">
     </div>
     <% if (typeof link !== 'undefined' && link) { %>
-      <div class="portfolio_item_info"><a href="<%= link %>" target="_blank">Check it out online!</a></div>
+      <div class="portfolio_item_info"><a href="<%= link %>">Check it out online!</a></div>
     <% } %>
     <% if (typeof github !== 'undefined' && github) { %>
-      <div class="portfolio_item_info"><a href="<%= github %>" target="_blank">Fork me on GitHub!</a></div>
+      <div class="portfolio_item_info"><a href="<%= github %>">Fork me on GitHub!</a></div>
     <% } %>
     <div class="portfolio_item_info"><%= description %></div>
     <% fields.forEach(function (field) { %>
@@ -139,7 +140,7 @@
     <% items.forEach(function (item) { %>
       <div class="article collapsible collapsed">
         <div class="article_date"><%= new Date(item.date).toLocaleDateString() %></div>
-        <div class="article_link"><a href="<%= item.link %>" target="_blank"><%= item.title %></a></div>
+        <div class="article_link"><a href="<%= item.link %>"><%= item.title %></a></div>
         <% if (item.subtitle) { %>
           <div class="article_subtitle"><%= item.subtitle %></div>
         <% } %>
