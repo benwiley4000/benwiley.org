@@ -4,6 +4,9 @@ data.audio = {
   "path": "audio/",
   "tracks": [
     {
+      "title": "Trash Island Bossa",
+      "file": "trash_island_bossa.mp3"
+    }, {
       "title": "Marty McPaper: Epic Delivery Service",
       "file": "marty_mcpaper_theme.mp3"
     }, {
