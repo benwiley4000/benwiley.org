@@ -12,7 +12,7 @@ app.AppView = Backbone.View.extend({
     'touchend .header': 'cycleColorIfCloseEnough'
   },
 
-  colorIndex: 1, // use orange by default
+  colorIndex: 7, // use magenta by default
 
   lastTouchStartY: null,
 
