@@ -48,7 +48,7 @@ a:hover {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: 520px;
+  width: 680px;
   max-width: 100%;
   padding: 0;
 }
@@ -78,6 +78,7 @@ a:hover {
 }
 .about,
 .contact,
+.opensource,
 .writing {
   max-width: 440px;
   align-self: center;
@@ -153,6 +154,9 @@ a:hover {
 }
 .portfolio_item_info .field_name {
   font-weight: bold;
+}
+.merged_request_attribute {
+  margin-bottom: .8rem;
 }
 .article {
   margin: 0 20px 30px;

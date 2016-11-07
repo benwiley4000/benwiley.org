@@ -17,11 +17,16 @@ app.AppView = Backbone.View.extend({
   lastTouchStartY: null,
 
   initialize: function () {
+    app.mergedRequests.fetch({
+      success: this.renderOpenSource.bind(this)
+    });
+
     this.$main = this.$('#main');
 
     this.$about = this.$('#about');
     this.$web = this.$('#web');
     this.$games = this.$('#games');
+    this.$opensource = this.$('#opensource');
     this.$writing = this.$('#writing');
     this.$contact = this.$('#contact');
 
@@ -91,6 +96,7 @@ app.AppView = Backbone.View.extend({
   render: function () {
     this.renderWebProjects();
     this.renderGames();
+    this.renderOpenSource();
     this.renderWriting();
   },
 
@@ -116,6 +122,17 @@ app.AppView = Backbone.View.extend({
     });
   },
 
+  renderOpenSource: function () {
+    var $mergedRequestList = this.$opensource.find('.merged_requests');
+    app.mergedRequests.each(function (model) {
+      var view = new app.MergedRequestView({ model: model });
+      $mergedRequestList.append(view.render().el);
+    });
+    if (app.page === 'opensource') {
+      this.swapView(); // make sure we de-collapse our stuff
+    }
+  },
+
   renderWriting: function () {
     var $writingList = this.$writing.find('.writing_list');
     $writingList.html('');
@@ -135,6 +152,8 @@ app.AppView = Backbone.View.extend({
       $divToOpen = this.$web;
     } else if (app.page === 'games') {
       $divToOpen = this.$games;
+    } else if (app.page === 'opensource') {
+      $divToOpen = this.$opensource;
     } else if (app.page === 'writing') {
       $divToOpen = this.$writing;
     } else if (app.page === 'contact') {
@@ -144,9 +163,9 @@ app.AppView = Backbone.View.extend({
     }
 
     var $targets = $divToOpen
-      .find('.collapsible.collapsed')
+      .find('.collapsible')
       .andSelf()
-      .filter('.collapsible.collapsed');
+      .filter('.collapsible');
 
     if (!$targets.length) {
       return;

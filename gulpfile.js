@@ -58,8 +58,12 @@ gulp.task('copy:favicon', function () {
 });
 
 gulp.task('buildjs', function () {
-  return gulp.src('src/js/**/*.js')
-    .pipe(plumber())
+  return gulp.src([
+    'src/js/app/models/*.js',
+    'src/js/app/!(models)/*.js',
+    'src/js/app/*.js',
+    'src/js/data/*.js'
+  ]).pipe(plumber())
     .pipe(concat('all.js'))
     .pipe(uglify())
     .pipe(rename('index.js'))

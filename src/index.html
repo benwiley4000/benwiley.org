@@ -26,6 +26,9 @@
           <a class="page_link" href="#/games">Games</a>
         </li>
         <li>
+          <a class="page_link" href="#/opensource">Open Source</a>
+        </li>
+        <li>
           <a class="page_link" href="#/writing">Writing</a>
         </li>
         <li>
@@ -50,6 +53,11 @@
       <div id="games" class="games projects_page">
         <div class="page_description collapsible collapsed">I code and make music for games with <a href="http://saidyeti.com/">Said Yeti</a>.</div>
         <div class="portfolio_container"></div>
+      </div>
+
+      <div id="opensource" class="opensource">
+        <div class="page_description collapsible collapsed">Here are some of my recent open source contributions.</div>
+        <div class="merged_requests"></div>
       </div>
 
       <div id="writing" class="writing">
@@ -129,6 +137,14 @@
         <div class="field_content"><%= field.content %></div>
       </div>
     <% }); %>
+  </script>
+
+  <script type="text/template" id="merged_request_template">
+    <div id="merged_request_entry" class="merged_request_entry collapsible collapsed">
+      <h2 class="merged_request_header"><a href="<%= repoUrl %>"><%= repoName %></a></h2>
+      <div class="request_name merged_request_attribute"><strong>Contribution:</strong> <a href="<%= url %>"><%= title %></a></div>
+      <div class="merged_date merged_request_attribute"><strong>Date:</strong> <%= new Date(mergeDate).toLocaleDateString() %></div>
+    </div>
   </script>
 
   <script type="text/template" id="article_category_template">
