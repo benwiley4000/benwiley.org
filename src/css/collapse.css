@@ -33,3 +33,6 @@
 .merged_request_entry {
   max-height: 130px;
 }
+.merged_requests {
+  max-height: 700px;
+}
