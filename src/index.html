@@ -143,7 +143,7 @@
     <div id="merged_request_entry" class="merged_request_entry collapsible collapsed">
       <h2 class="merged_request_header"><a href="<%= repoUrl %>"><%= repoName %></a></h2>
       <div class="request_name merged_request_attribute"><strong>Contribution:</strong> <a href="<%= url %>"><%= title %></a></div>
-      <div class="merged_date merged_request_attribute"><strong>Date:</strong> <%= new Date(mergeDate).toLocaleDateString() %></div>
+      <div class="merged_date merged_request_attribute"><strong>Date:</strong> <%= moment(mergeDate).format('D MMM YYYY') %></div>
     </div>
   </script>
 
@@ -151,7 +151,7 @@
     <h2 class="article_category_header collapsible collapsed"><%= name %></h2>
     <% items.forEach(function (item) { %>
       <div class="article collapsible collapsed">
-        <div class="article_date"><%= new Date(item.date).toLocaleDateString() %></div>
+        <div class="article_date"><%= moment(item.date).format('D MMM YYYY') %></div>
         <div class="article_link"><a href="<%= item.link %>"><%= item.title %></a></div>
         <% if (item.subtitle) { %>
           <div class="article_subtitle"><%= item.subtitle %></div>

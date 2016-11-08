@@ -26,7 +26,8 @@ gulp.task('copy:libs', function () {
   return gulp.src([
     'jquery-2.1.4.min.js',
     'underscore-min.js',
-    'backbone-min.js'
+    'backbone-min.js',
+    'moment.min.js'
   ], { cwd: 'src/js/lib/' })
     .pipe(plumber())
     .pipe(concat('libs.js'))
