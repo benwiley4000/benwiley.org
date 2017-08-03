@@ -28,7 +28,7 @@ data.web = {
       "title": "DSN Zine",
       "jpg": "dsn_zine.jpg",
       "gif": "dsn_zine.gif",
-      "link": "http://www.studentsdivest.org/dsn_zine_telling_stories_of_resistance",
+      "link": "http://benwiley4000.github.io/dsn-zine-resistance/",
       "github": "https://github.com/benwiley4000/dsn-zine-resistance",
       "description": "Web conversion of print zine from Fossil Fuel Divestment Student Network (DSN). Built to retain look and feel of original while delivering modern, versatile web experience. Uses latest responsive web technologies to ensure fast download speeds and sharp presentation.",
       "fields": [
