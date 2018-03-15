@@ -8,6 +8,8 @@ app.AppView = Backbone.View.extend({
 
   events: {
     'click .top_stripe': 'cycleColor',
+    'mouseenter .top_stripe': 'startFullCyclePlusOne',
+    'mouseleave .top_stripe': 'haltFullCyclePlusOne',
     'touchstart .header': 'recordLastTouchStartY',
     'touchend .header': 'cycleColorIfCloseEnough'
   },
@@ -83,6 +85,29 @@ app.AppView = Backbone.View.extend({
     var classnames = data.colors.classnames;
     this.$el.removeClass(classnames.join(' '))
       .addClass(classnames[this.colorIndex]);
+  },
+
+  startFullCyclePlusOne: function () {
+    this.cycleColorsLeftToGo = 3;
+    var framesDrawn = 0;
+    var _this = this;
+    var cycleToNext = function cycleToNext () {
+      if (_this.cycleColorsLeftToGo <= 0) {
+        return;
+      }
+      if (framesDrawn++ % 20 === 0) {
+        _this.cycleColor();
+        _this.cycleColorsLeftToGo--;
+      }
+      window.requestAnimationFrame(cycleToNext);
+    };
+    if (window.requestAnimationFrame) {
+      requestAnimationFrame(cycleToNext);
+    }
+  },
+
+  haltFullCyclePlusOne: function () {
+    this.cycleColorsLeftToGo = 0;
   },
 
   toggleAudioPause: function (e) {
