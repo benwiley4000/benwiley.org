@@ -94,4 +94,6 @@ gulp.task('watch', function () {
   gulp.watch('src/css/*.css', ['styles']);
 });
 
-gulp.task('default', ['copy', 'buildjs', 'lint', 'styles', 'watch']);
+gulp.task('default', ['copy', 'buildjs', 'lint', 'styles']);
+
+gulp.task('build:watch', ['default', 'watch']);
